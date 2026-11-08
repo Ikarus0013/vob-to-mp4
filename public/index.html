@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOB to MP4 Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 VOB to MP4 Converter</h1>
+            <p>Convert your VOB files to MP4 format quickly and easily</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <div class="upload-icon">📁</div>
+                        <h3>Drop your VOB files here</h3>
+                        <p>or click to browse</p>
+                        <input type="file" id="fileInput" accept=".vob" multiple hidden>
+                        <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+                            Browse Files
+                        </button>
+                    </div>
+                </div>
+
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <div class="file-details">
+                        <span class="file-name" id="fileName"></span>
+                        <span class="file-size" id="fileSize"></span>
+                    </div>
+                    <button class="convert-btn" id="convertBtn">Convert to MP4</button>
+                </div>
+            </div>
+
+            <div class="progress-section" id="progressSection" style="display: none;">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">Converting...</div>
+                </div>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="success-message">
+                    <div class="success-icon">✅</div>
+                    <h3>Conversion Complete!</h3>
+                    <p>Your VOB file has been successfully converted to MP4</p>
+                </div>
+                <div class="download-section">
+                    <button class="download-btn" id="downloadBtn">
+                        📥 Download MP4
+                    </button>
+                    <button class="new-conversion-btn" id="newConversionBtn">
+                        🔄 Convert Another File
+                    </button>
+                </div>
+            </div>
+
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-message">
+                    <div class="error-icon">❌</div>
+                    <h3>Conversion Failed</h3>
+                    <p id="errorText"></p>
+                </div>
+                <button class="retry-btn" id="retryBtn">Try Again</button>
+            </div>
+        </main>
+
+        <footer>
+            <div class="info">
+                <h4>Requirements:</h4>
+                <ul>
+                    <li>VOB files only</li>
+                    <li>Maximum file size: 2GB</li>
+                    <li>FFmpeg must be installed on your system</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
